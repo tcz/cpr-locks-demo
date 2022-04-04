@@ -1,7 +1,7 @@
 # Simple Locks in Erlang
 
 This repository was created to demonstrate n>2 lock acquiring in Erlang using `global:set_lock` 
-which was a debated point in my FPR assignment at Oxford.
+which was a debated point in my CPR assignment at Oxford.
 
 The lock mechanism is the same I used in the assignment, except it was simplified
 to exclude the chatroom related code.
