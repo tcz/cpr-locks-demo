@@ -1,0 +1,26 @@
+#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -sname run_lock_3 -mnesia debug verbose
+
+main(_) ->
+    HostName = lists:nth(2, string:split(atom_to_list(erlang:node()), "@")),
+
+    lock:connect([
+        list_to_atom(string:concat("run_lock_1@", HostName)),
+        list_to_atom(string:concat("run_lock_2@", HostName))
+    ]),
+
+    io:format("Process 3 connected~n"),
+    io:format("Other nodes: ~p~n", [nodes()]),
+
+    io:format("Run the other nodes now if it's not yet running...~n"),
+    io:format("Press ENTER when done"),
+    io:get_chars("", 1),
+    io:format("~n"),
+
+    Id = lock:acquire(),
+    io:format("Process 3 received ID: ~p~n", [Id]),
+
+    io:format("Press ENTER to exit"),
+    io:get_chars("", 1),
+    io:format("~n").

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+erl -make
+bin/run_lock_2
