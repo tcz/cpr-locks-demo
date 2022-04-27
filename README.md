@@ -6,7 +6,7 @@ which was a debated point in my CPR assignment at Oxford.
 The lock mechanism is the same I used in the assignment, except it was simplified
 to exclude the chatroom related code.
 
-## How ro run?
+## How to run?
 
 1. Open 3 terminal windows
 2. Run the following commands in each of the windows respectively:
